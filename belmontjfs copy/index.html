@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crawford County Department of Job & Family Services</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon_1.ico">
+
+  <!-- USWDS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@uswds/uswds@3.7.1/dist/css/uswds.min.css">
+
+  <!-- Font Awesome for better icon support -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css?v=17">
+</head>
+<body>
+
+  <!-- Skip Navigation Link for Accessibility -->
+  <a href="#main-content" class="usa-skipnav">Skip to main content</a>
+
+  <!-- Facebook SDK -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="YOUR_NONCE"></script>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="grid-container">
+      <div class="site-header__inner">
+        <div class="site-header__logo">
+          <a href="/" title="Home">
+            <img src="logo.png" alt="Crawford County Department of Job & Family Services">
+          </a>
+        </div>
+
+        <button class="site-header__mobile-toggle" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-header__nav" id="mainNav" aria-label="Primary navigation">
+          <ul class="site-header__menu">
+            <li class="has-dropdown">
+              <a href="/public-assistance" class="dropdown-toggle" aria-expanded="false">Public Assistance</a>
+              <ul class="dropdown-menu">
+                <li><a href="/snap-food-assistance">Food Assistance (SNAP)</a></li>
+                <li><a href="/medicaid-medical">Medical Assistance (Medicaid)</a></li>
+                <li><a href="/cash-assistance">Cash Assistance</a></li>
+                <li><a href="/online-applications">Online Applications</a></li>
+                <li><a href="/prc-net-transportation">PRC & NET Transportation</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="/child-support" class="dropdown-toggle" aria-expanded="false">Child Support</a>
+              <ul class="dropdown-menu">
+                <li><a href="/paternity-establishment">Paternity Establishment</a></li>
+                <li><a href="/order-establishment">Order Establishment</a></li>
+                <li><a href="/order-enforcement">Order Enforcement</a></li>
+                <li><a href="/payment-options">Payment Options</a></li>
+                <li><a href="/review-and-adjustment">Review and Adjustment</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="/child-adult-protective-services" class="dropdown-toggle" aria-expanded="false">Child & Adult Protective Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="/report-child-abuse">Report Child Abuse</a></li>
+                <li><a href="/child-protective-services">Child Protective Services</a></li>
+                <li><a href="/adult-protective-services">Adult Protective Services</a></li>
+                <li><a href="/foster-adopt">Foster Care & Adoption</a></li>
+                <li><a href="/kinship-care">Kinship Care</a></li>
+              </ul>
+            </li>
+            <li><a href="/ohio-means-jobs">OhioMeansJobs</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="usa-hero hero-djfs" aria-label="Introduction">
+      <div class="grid-container">
+        <div class="hero-content-wrapper">
+          <div class="usa-hero__callout">
+            <p class="usa-hero__heading--alt">Committed To Helping Crawford County</p>
+            <h1 class="usa-hero__heading">
+              Help Is Available For You, Your Kids, Your Family And More.
+            </h1>
+            <p class="hero-description">
+              The Crawford County Department of Job and Family Services provides assistance with public benefits, child support, child and adult protective services, foster care, adoption, and workforce development.
+            </p>
+            <div class="hero-actions">
+              <a class="usa-button usa-button--big" href="#apply">Apply for Benefits</a>
+              <a class="usa-button usa-button--outline usa-button--inverse usa-button--big" href="tel:419-562-0015">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                Call (419) 562-0015
+              </a>
+            </div>
+          </div>
+
+          <!-- Chat Widget UI -->
+          <div class="chat-widget" id="chatWidget">
+            <div class="chat-widget__header">
+              <div class="chat-widget__header-content">
+                <i class="fas fa-comments chat-widget__header-icon"></i>
+                <div class="chat-widget__header-text">
+                  <h2 class="chat-widget__title">Ask Us Anything</h2>
+                  <p class="chat-widget__subtitle">Get instant help</p>
+                </div>
+              </div>
+              <div class="chat-widget__header-actions">
+                <div class="chat-widget__status">
+                  <span class="chat-widget__status-dot"></span>
+                  <span class="chat-widget__status-text">Online</span>
+                </div>
+                <button class="chat-widget__close-button" id="closeChatButton" aria-label="Close chat">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="chat-widget__messages">
+              <div class="chat-message chat-message--bot">
+                <div class="chat-message__avatar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="chat-message__content">
+                  <div class="chat-message__bubble">
+                    Hello! How can I help you today? I can answer questions about our services, applications, and more.
+                  </div>
+                  <div class="chat-message__time">Just now</div>
+                </div>
+              </div>
+
+              <div class="chat-message chat-message--user">
+                <div class="chat-message__content">
+                  <div class="chat-message__bubble">
+                    How do I apply for food assistance?
+                  </div>
+                  <div class="chat-message__time">Just now</div>
+                </div>
+              </div>
+
+              <div class="chat-message chat-message--bot">
+                <div class="chat-message__avatar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="chat-message__content">
+                  <div class="chat-message__bubble">
+                    You can apply for food assistance online or by calling 740-695-1075. Would you like me to guide you through the process?
+                  </div>
+                  <div class="chat-message__time">Just now</div>
+                </div>
+              </div>
+
+              <div class="chat-widget__typing">
+                <div class="chat-typing-indicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-widget__input">
+              <label for="chat-input-field" class="sr-only">Type your message</label>
+              <input type="text" id="chat-input-field" class="chat-widget__input-field" placeholder="Type your question..." aria-label="Chat message input">
+              <button class="chat-widget__send-button" aria-label="Send message">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Chat Bubble -->
+      <button class="chat-bubble-mobile" id="openChatButton" aria-label="Open chat">
+        <i class="fas fa-comments"></i>
+        <span class="chat-bubble-mobile__badge">1</span>
+      </button>
+    </section>
+
+    <!-- JavaScript for Chat Functionality -->
+    <script>
+      (function() {
+        const chatWidget = document.getElementById('chatWidget');
+        const openChatButton = document.getElementById('openChatButton');
+        const closeChatButton = document.getElementById('closeChatButton');
+
+        function isMobile() {
+          return window.innerWidth <= 640;
+        }
+
+        // Open chat when clicking bubble
+        if (openChatButton) {
+          openChatButton.addEventListener('click', function() {
+            if (isMobile()) {
+              chatWidget.classList.add('chat-widget--mobile-open');
+              document.body.style.overflow = 'hidden'; // Prevent body scroll on mobile
+            } else {
+              chatWidget.classList.add('chat-widget--desktop-open');
+            }
+            openChatButton.style.display = 'none';
+          });
+        }
+
+        // Close chat when clicking close button
+        if (closeChatButton) {
+          closeChatButton.addEventListener('click', function() {
+            chatWidget.classList.remove('chat-widget--mobile-open');
+            chatWidget.classList.remove('chat-widget--desktop-open');
+            if (openChatButton) {
+              openChatButton.style.display = 'flex';
+            }
+            document.body.style.overflow = ''; // Restore body scroll
+          });
+        }
+
+        // Handle window resize - reset chat state
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function() {
+            // Close chat on resize to avoid layout issues
+            const wasMobileOpen = chatWidget.classList.contains('chat-widget--mobile-open');
+            const wasDesktopOpen = chatWidget.classList.contains('chat-widget--desktop-open');
+
+            if (wasMobileOpen || wasDesktopOpen) {
+              chatWidget.classList.remove('chat-widget--mobile-open');
+              chatWidget.classList.remove('chat-widget--desktop-open');
+              if (openChatButton) {
+                openChatButton.style.display = 'flex';
+              }
+              document.body.style.overflow = '';
+            }
+          }, 250);
+        });
+      })();
+    </script>
+
+    <!-- Report Fraud Alert -->
+    <section class="fraud-alert-section">
+      <div class="grid-container">
+        <div class="usa-alert usa-alert--warning usa-alert--slim">
+          <div class="usa-alert__body">
+            <h2 class="usa-alert__heading">Report Fraud</h2>
+            <p class="usa-alert__text">
+              The Ohio Department of Job and Family Services is committed to investigating allegations of fraud. If you suspect fraud may be occurring,
+              <a href="/fraud-assistance" class="usa-link">click here to report</a> or call <strong>(419) 562-0015</strong>. You may remain anonymous.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access-section">
+      <div class="grid-container">
+        <h2 class="section-heading">I Need Help With...</h2>
+        <ul class="usa-accordion usa-accordion--bordered quick-access-list">
+          <li>
+            <button class="usa-accordion__button" aria-expanded="false" aria-controls="child-support-services">
+              Child Support Services
+            </button>
+            <div id="child-support-services" class="usa-accordion__content usa-prose">
+              <h3>Child Support Services</h3>
+
+              <h4>Contact Us</h4>
+              <ul>
+                <li><strong>Phone:</strong> <a href="tel:419-562-0773">(419) 562-0773</a> or <a href="tel:1-800-761-0773">1-800-761-0773</a></li>
+                <li><strong>Office:</strong> 225 E. Mary Street, Bucyrus, Ohio 44820</li>
+                <li><strong>Hours:</strong> Monday–Friday, 7:30 AM–4:00 PM</li>
+                <li><strong>Web Portal:</strong> Message your caseworker directly at <a href="https://jfs.ohio.gov/ocs" target="_blank" rel="noopener noreferrer">jfs.ohio.gov/ocs</a></li>
+              </ul>
+
+              <h4>Services Overview</h4>
+              <ul>
+                <li>Paternity establishment</li>
+                <li>Child/Medical support order establishment</li>
+                <li>Order enforcement (income withholding, license suspension, asset seizure, tax refund interception)</li>
+                <li>Review and adjustment of orders</li>
+                <li>Payment processing</li>
+                <li>Employment assistance</li>
+              </ul>
+
+              <h4>Payment Options</h4>
+
+              <h5>By Mail</h5>
+              <p>Send personal check, money order, or cashier's check to the appropriate address:</p>
+
+              <p><strong>Individual obligor payments:</strong></p>
+              <address>
+                Ohio Child Support Payment Central (CSPC)<br>
+                P.O. Box 182372<br>
+                Columbus, OH 43218-2372
+              </address>
+
+              <p><strong>Employer payments:</strong></p>
+              <address>
+                Ohio Child Support Payment Central (CSPC)<br>
+                P.O. Box 182394<br>
+                Columbus, OH 43218-2394
+              </address>
+
+              <p><em>Include your name and SETS or Social Security Number on all checks.</em></p>
+
+              <h5>Credit/Debit Card</h5>
+              <p>Pay online at <a href="https://oh.smartchildsupport.com" target="_blank" rel="noopener noreferrer">oh.smartchildsupport.com</a> or call <a href="tel:1-888-965-2676">1-888-965-2676</a></p>
+
+              <h5>Direct Bank Transfer</h5>
+              <p>Set up direct transfers through your bank or the Ohio CSPC portal</p>
+
+              <h5>In-Person</h5>
+              <p>Payments accepted at 225 E. Mary Street, Bucyrus, Ohio 44820</p>
+
+              <h4>Additional Resources</h4>
+              <ul>
+                <li><strong>State Child Support:</strong> <a href="https://jfs.ohio.gov/Ocs" target="_blank" rel="noopener noreferrer">jfs.ohio.gov/Ocs</a></li>
+                <li><strong>Customer Service Web Portal:</strong> <a href="https://jfs.ohio.gov/Ocs/CustServWebPortalWelcome2.stm" target="_blank" rel="noopener noreferrer">jfs.ohio.gov/Ocs/CustServWebPortalWelcome2.stm</a></li>
+              </ul>
+
+              <a href="/child-support" class="usa-button">Learn More</a>
+            </div>
+          </li>
+          <li>
+            <button class="usa-accordion__button" aria-expanded="false" aria-controls="public-assistance-services">
+              Public Assistance Services
+            </button>
+            <div id="public-assistance-services" class="usa-accordion__content usa-prose">
+              <h3>Public Assistance Services</h3>
+
+              <h4>Contact Information</h4>
+              <ul>
+                <li><strong>Phone:</strong> <a href="tel:419-562-0015">(419) 562-0015</a></li>
+                <li><strong>Fax:</strong> 419-562-1056</li>
+                <li><strong>Hours:</strong> Monday–Friday, 7:30 AM–4:00 PM</li>
+                <li><strong>Address:</strong> 224 Norton Way, Bucyrus, OH 44820</li>
+              </ul>
+
+              <h4>Service Categories</h4>
+              <ul>
+                <li>Food Assistance (SNAP)</li>
+                <li>Medical Assistance (Medicaid)</li>
+                <li>Cash Assistance</li>
+                <li>PRC & NET Transportation</li>
+              </ul>
+
+              <h4>How to Apply</h4>
+
+              <h5>Online Application (Recommended)</h5>
+              <p><strong><a href="https://benefits.ohio.gov" target="_blank" rel="noopener noreferrer">benefits.ohio.gov</a></strong></p>
+              <p>Application is submitted online. Interviews or further contact will be by telephone and/or mail.</p>
+
+              <h5>Medicaid Application</h5>
+              <p><strong>Call:</strong> <a href="tel:1-844-640-6446">1-844-640-6446</a></p>
+              <p>All follow up will be by mail.</p>
+
+              <h5>Paper Application</h5>
+              <p>To receive a paper application for SNAP/OWF and/or Medicaid, call <a href="tel:419-562-0015">(419) 562-0015</a> or <a href="tel:1-844-640-6446">1-844-640-6446</a></p>
+
+              <h4>Submit Required Documents</h4>
+              <p>Required documents may be:</p>
+              <ul>
+                <li><strong>Mailed</strong> to 224 Norton Way, Bucyrus, OH 44820</li>
+                <li><strong>Faxed</strong> to 419-562-1056</li>
+                <li><strong>Dropped off</strong> in document drop boxes on both sides of the building</li>
+              </ul>
+
+              <div class="usa-alert usa-alert--info usa-alert--slim">
+                <div class="usa-alert__body">
+                  <p class="usa-alert__text">
+                    <strong>Note:</strong> Services are being provided by telephone and online at <a href="https://benefits.ohio.gov" target="_blank" rel="noopener noreferrer">benefits.ohio.gov</a>. Document drop boxes are available on both sides of the building.
+                  </p>
+                </div>
+              </div>
+
+              <h4>Report Fraud or Overpayment Issues</h4>
+              <p>Contact the agency at <a href="tel:419-562-0015">(419) 562-0015</a> to report benefits fraud or discuss overpayment issues.</p>
+              <p>Overpayment payments accepted at agency office or by mail. Make money orders payable to Crawford County Department of Job and Family Services. Do not send cash by mail.</p>
+
+              <a href="/public-assistance" class="usa-button">Learn More</a>
+            </div>
+          </li>
+          <li>
+            <button class="usa-accordion__button" aria-expanded="false" aria-controls="children-services">
+              Child & Adult Protective Services
+            </button>
+            <div id="children-services" class="usa-accordion__content usa-prose">
+              <h3>Child & Adult Protective Services</h3>
+
+              <div class="usa-alert usa-alert--error usa-alert--slim">
+                <div class="usa-alert__body">
+                  <p class="usa-alert__text">
+                    <strong>Emergency:</strong> To report child abuse or neglect, call <a href="tel:419-563-1570"><strong>(419) 563-1570</strong></a> (24/7). After hours, call <strong>911</strong>. For adult abuse (age 60+), call <a href="tel:567-393-4729"><strong>567-393-4729</strong></a>.
+                  </p>
+                </div>
+              </div>
+
+              <h4>Child Protective Services</h4>
+              <ul>
+                <li><strong>Phone:</strong> <a href="tel:419-563-1570">(419) 563-1570</a> (24/7)</li>
+                <li><strong>Fax:</strong> 419-562-0050</li>
+                <li><strong>Office:</strong> 224 Norton Way, Bucyrus, OH 44820</li>
+                <li><strong>Hours:</strong> Monday–Friday, 7:30 AM–4:00 PM</li>
+              </ul>
+
+              <p><strong>Mission:</strong> To improve the safety, permanency, and well-being of children and families involved in the Child Welfare system through collaboration with families and their community.</p>
+
+              <p><strong>How to Report:</strong> Call Crawford County Child Protective Services at <a href="tel:419-563-1570">(419) 563-1570</a> and state you wish to make a child abuse and neglect report. Reports can be made 24/7.</p>
+
+              <p><strong>Confidentiality:</strong> The law protects the confidentiality of a reporter. A social worker cannot reveal, confirm or deny who a reporter may be. There are no consequences for reports made in good faith, even if unfounded.</p>
+
+              <h4>Adult Protective Services</h4>
+              <p>Adult Protective Services staff investigate reports of abuse, neglect (including self-neglect) or financial exploitation of adults age 60 and over who are unable to protect themselves due to a serious physical or mental limitation.</p>
+
+              <ul>
+                <li><strong>Phone:</strong> <a href="tel:567-393-4729">567-393-4729</a></li>
+                <li><strong>Partnership:</strong> Works with The Ohio District 5 Area Agency on Aging</li>
+              </ul>
+
+              <p><strong>Types of Elder Abuse:</strong></p>
+              <ul>
+                <li>Neglect: Caretakers failing to provide food, shelter, healthcare, or protection</li>
+                <li>Self-Neglect: Elderly individuals unable or unwilling to provide necessary self-care</li>
+                <li>Exploitation: Unauthorized use or theft of an elder's funds or property</li>
+                <li>Emotional Abuse: Verbal threats, intimidation, name-calling, harassment and isolation</li>
+                <li>Physical Abuse: Injury inflicted through hitting, kicking, or weaponry</li>
+                <li>Sexual Abuse: Nonconsensual or forced sexual contact</li>
+              </ul>
+
+              <h4>Foster Care & Adoption</h4>
+              <p><strong>Help change a child's life…become a foster and/or adoptive parent</strong></p>
+
+              <p>Fostering a child and/or providing a forever home at a time they need it most can have a lifelong impact. There are several children in the custody of Crawford County Child Protective Services that need the love and care that you can provide.</p>
+
+              <ul>
+                <li><strong>Contact:</strong> Beth Sergent at <a href="tel:567-393-4733">567-393-4733</a></li>
+                <li><strong>Requirements:</strong> Single or married, homeowners or renters, age 21+. Must be licensed with ongoing training and criminal check required.</li>
+                <li><strong>Resources:</strong> <a href="https://fosterandadopt.jfs.ohio.gov" target="_blank" rel="noopener noreferrer">fosterandadopt.jfs.ohio.gov</a></li>
+              </ul>
+
+              <h4>Kinship Care</h4>
+              <p>Support and resources available for relatives caring for children. Contact <a href="tel:419-562-0015">(419) 562-0015</a> for more information.</p>
+
+              <h4>Safe Haven for Newborns</h4>
+              <p>Birth parents may leave an infant (up to 30 days old) with a medical worker at a hospital, emergency medical worker, or law enforcement officer without prosecution if the infant has not been abused.</p>
+
+              <a href="/child-adult-protective-services" class="usa-button">Learn More</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Support Areas -->
+    <section class="support-areas-section">
+      <div class="grid-container">
+        <h2 class="section-heading">Support Areas</h2>
+
+        <div class="support-grid">
+          <!-- Medicaid Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/medicaid.jpg');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">Medicaid</h3>
+              <p class="support-card__description">
+                Federally funded health care program that provides assistance to certain low-income and medically vulnerable people.
+              </p>
+              <a href="/medicaid" class="support-card__cta" aria-label="Learn more about Medicaid">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Food & Cash Assistance Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/food-assistance.jpg');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">Food & Cash Assistance</h3>
+              <p class="support-card__description">
+                Public Assistance benefits are available to Ohioans, including food, cash, medicaid and child care.
+              </p>
+              <a href="/public-assistance" class="support-card__cta" aria-label="Learn more about Food and Cash Assistance">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Child Care Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/child-care.jpg');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">Child Care</h3>
+              <p class="support-card__description">
+                Learn about the child care process, get help paying for Child Care or become a Child Care provider.
+              </p>
+              <a href="/child-care" class="support-card__cta" aria-label="Learn more about Child Care">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Child Support Enforcement Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/child-support.png');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">Child Support Enforcement</h3>
+              <p class="support-card__description">
+                All child support for Ohio's children goes through a CSEA. Crawford County CSEA can accept check, money orders, credit card payments, and direct bank transfers.
+              </p>
+              <a href="/child-support" class="support-card__cta" aria-label="Learn more about Child Support Enforcement">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Child Protective Services Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/child-protective.png');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">Child Protective Services</h3>
+              <p class="support-card__description">
+                Protecting our children is important. If you suspect that a child living in Crawford County is being abused or neglected, call immediately.
+              </p>
+              <a href="/child-protective-services" class="support-card__cta" aria-label="Learn more about Child Protective Services">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Adoption & Foster Care Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/adoption.png');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">Adoption & Foster Care</h3>
+              <p class="support-card__description">
+                Help change a child's life. Contact Beth Sergent at (567) 393-4733 to learn about becoming a foster or adoptive parent.
+              </p>
+              <a href="/adoption-foster" class="support-card__cta" aria-label="Learn more about Adoption and Foster Care">Learn more</a>
+            </div>
+          </article>
+
+          <!-- OhioMeansJobs Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/workforce.png');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">OhioMeansJobs</h3>
+              <p class="support-card__description">
+                OhioMeansJobs Crawford County provides job seeker services, youth programming, and business services for employers. Get resume help, training and financial support.
+              </p>
+              <a href="/ohio-means-jobs" class="support-card__cta" aria-label="Learn more about OhioMeansJobs">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Join Our Team Card -->
+          <article class="support-card support-card--image">
+            <div class="support-card__bg-image" style="background-image: url('public/job.png');"></div>
+            <div class="support-card__overlay"></div>
+            <div class="support-card__content">
+              <h3 class="support-card__title">Join Our Team</h3>
+              <p class="support-card__description">
+                Current job openings at Crawford County DJFS. Information on how to apply and employment opportunities.
+              </p>
+              <a href="/join-our-team" class="support-card__cta" aria-label="View job openings at Crawford County DJFS">View Openings</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview Callout -->
+    <section class="services-callout">
+      <div class="grid-container">
+        <div class="services-callout__content">
+          <div class="services-callout__icon">
+            <i class="fas fa-hands-helping" aria-hidden="true"></i>
+          </div>
+          <p class="services-callout__text">
+            The Crawford County Department of Job and Family Services is committed to providing the community with necessary resources to support and encourage individuals and families in achieving their goals for self-sufficiency. We serve residents with dignity, respect, and compassion through public assistance, child and adult protective services, child support enforcement, and workforce development programs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- News & Contact Section -->
+    <section class="news-section">
+      <div class="grid-container">
+        <div class="news-grid">
+          <!-- Latest Updates Column -->
+          <div class="news-articles">
+            <h2 class="section-heading">Latest Updates</h2>
+
+            <article class="news-article">
+              <div class="news-article__image">
+                <i class="fas fa-file-alt" aria-hidden="true"></i>
+              </div>
+              <div class="news-article__content">
+                <h4 class="news-article__title">
+                  <a href="/news/group-home-supervisor-manager">Group Home Supervisor/Manager</a>
+                </h4>
+                <time class="news-article__date" datetime="2025-10-07">October 7, 2025</time>
+              </div>
+            </article>
+
+            <article class="news-article">
+              <div class="news-article__image">
+                <i class="fas fa-file-alt" aria-hidden="true"></i>
+              </div>
+              <div class="news-article__content">
+                <h4 class="news-article__title">
+                  <a href="/news/fiscal-account-clerk-2">Job Posting: Crawford County Department of Job and Family Services Fiscal – Account Clerk 2</a>
+                </h4>
+                <time class="news-article__date" datetime="2025-10-07">October 7, 2025</time>
+              </div>
+            </article>
+
+            <article class="news-article">
+              <div class="news-article__image">
+                <i class="fas fa-file-alt" aria-hidden="true"></i>
+              </div>
+              <div class="news-article__content">
+                <h4 class="news-article__title">
+                  <a href="/news/im-aide-public-assistance">Job Posting: Crawford County Department of Job and Family Services IM Aide – Public Assistance Division</a>
+                </h4>
+                <time class="news-article__date" datetime="2025-10-06">October 6, 2025</time>
+              </div>
+            </article>
+
+            <article class="news-article">
+              <div class="news-article__image">
+                <i class="fas fa-file-alt" aria-hidden="true"></i>
+              </div>
+              <div class="news-article__content">
+                <h4 class="news-article__title">
+                  <a href="/news/social-services-worker">Job Posting: Crawford County Department of Job and Family Services Social Services Worker 2/3</a>
+                </h4>
+                <time class="news-article__date" datetime="2025-09-30">September 30, 2025</time>
+              </div>
+            </article>
+
+            <a href="/news" class="news-articles__view-all">View All News <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+
+          <!-- Contact Us Column -->
+          <div class="news-facebook">
+            <h2 class="section-heading">Contact Us</h2>
+            <div class="contact-cards-grid">
+              <!-- Director Card -->
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <i class="fas fa-user-tie" aria-hidden="true"></i>
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Director</h3>
+                  <p class="contact-card__text">
+                    Crawford County DJFS
+                  </p>
+                </div>
+              </div>
+
+              <!-- Hours Card -->
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <i class="far fa-clock" aria-hidden="true"></i>
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Office Hours</h3>
+                  <p class="contact-card__text">
+                    <strong>Mon-Fri:</strong> 7:30 AM – 4:00 PM
+                  </p>
+                </div>
+              </div>
+
+              <!-- Address Card -->
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Address</h3>
+                  <p class="contact-card__text">
+                    224 Norton Way<br>
+                    Bucyrus, OH 44820
+                  </p>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Phone</h3>
+                  <p class="contact-card__text">
+                    <a href="tel:419-562-0015">(419) 562-0015</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Email Card -->
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Email</h3>
+                  <p class="contact-card__text">
+                    <a href="mailto:CRAWFORD_COUNTY_JFS@jfs.ohio.gov">CRAWFORD_COUNTY_JFS@jfs.ohio.gov</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="site-footer__main">
+      <div class="grid-container">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <p>We provide Crawford County residents with supportive services for public assistance, child and adult protection, and workforce development.</p>
+            <div class="site-footer__social" aria-label="Follow Crawford County DJFS">
+              <a href="https://www.facebook.com/" class="site-footer__social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/" class="site-footer__social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.youtube.com/" class="site-footer__social-link" aria-label="YouTube">
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <nav class="site-footer__column" aria-label="About DJFS">
+            <h3 class="site-footer__heading">About DJFS</h3>
+            <ul class="site-footer__list">
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/jobs">Job Postings</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </nav>
+
+          <nav class="site-footer__column" aria-label="Quick Links">
+            <h3 class="site-footer__heading">Quick Links</h3>
+            <ul class="site-footer__list">
+              <li><a href="/public-assistance">Public Assistance</a></li>
+              <li><a href="/child-support">Child Support</a></li>
+              <li><a href="/child-adult-protective-services">Child & Adult Protective Services</a></li>
+              <li><a href="/ohio-means-jobs">OhioMeansJobs</a></li>
+              <li><a href="/foster-adopt">Foster Care & Adoption</a></li>
+              <li><a href="/additional-resources">Additional Resources</a></li>
+            </ul>
+          </nav>
+
+          <div class="site-footer__column" aria-label="Contact details">
+            <h3 class="site-footer__heading">Contact Details</h3>
+            <ul class="site-footer__contact-list">
+              <li>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>224 Norton Way<br>Bucyrus, OH 44820</span>
+              </li>
+              <li>
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <a href="tel:419-562-0015">(419) 562-0015</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:CRAWFORD_COUNTY_JFS@jfs.ohio.gov">CRAWFORD_COUNTY_JFS@jfs.ohio.gov</a>
+              </li>
+              <li>
+                <i class="far fa-clock" aria-hidden="true"></i>
+                <span>Mon – Fri, 7:30 AM – 4:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="grid-container">
+        <div class="site-footer__bottom-inner">
+          <p>© <span id="footerYear"></span> Crawford County Department of Job & Family Services. All rights reserved.</p>
+          <div class="site-footer__policies">
+            <a href="/accessibility">Accessibility</a>
+            <a href="/privacy-policy">Privacy</a>
+            <a href="/sitemap">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Keep footer year current without additional dependencies
+    (function () {
+      var footerYear = document.getElementById('footerYear');
+      if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+
+  <!-- USWDS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@uswds/uswds@3.7.1/dist/js/uswds-init.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@uswds/uswds@3.7.1/dist/js/uswds.min.js"></script>
+
+  <!-- Header Navigation JavaScript -->
+  <script>
+    (function() {
+      // Mobile menu toggle
+      const mobileToggle = document.getElementById('mobileMenuToggle');
+      const mainNav = document.getElementById('mainNav');
+
+      if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener('click', function() {
+          const isOpen = mainNav.classList.contains('open');
+          mainNav.classList.toggle('open');
+          mobileToggle.setAttribute('aria-expanded', !isOpen);
+        });
+      }
+
+      // Dropdown toggles
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+      // Function to close all dropdowns
+      function closeAllDropdowns() {
+        dropdownToggles.forEach(toggle => {
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      // Function to get dropdown menu items
+      function getDropdownItems(toggle) {
+        const parent = toggle.closest('.has-dropdown');
+        if (!parent) return [];
+        const menu = parent.querySelector('.dropdown-menu');
+        if (!menu) return [];
+        return Array.from(menu.querySelectorAll('a'));
+      }
+
+      // Click handler for dropdowns
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+          // Close all other dropdowns
+          dropdownToggles.forEach(t => {
+            if (t !== this) {
+              t.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Toggle this dropdown
+          this.setAttribute('aria-expanded', !isExpanded);
+
+          // If opening, focus first menu item
+          if (!isExpanded) {
+            const items = getDropdownItems(this);
+            if (items.length > 0) {
+              setTimeout(() => items[0].focus(), 50);
+            }
+          }
+        });
+
+        // Keyboard navigation for dropdown toggles
+        toggle.addEventListener('keydown', function(e) {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          const items = getDropdownItems(this);
+
+          if (e.key === 'Escape' && isExpanded) {
+            // Close dropdown and return focus to toggle
+            e.preventDefault();
+            this.setAttribute('aria-expanded', 'false');
+            this.focus();
+          } else if (e.key === 'ArrowDown' && isExpanded) {
+            // Navigate to first item in dropdown
+            e.preventDefault();
+            if (items.length > 0) {
+              items[0].focus();
+            }
+          } else if (e.key === 'ArrowUp' && isExpanded) {
+            // Navigate to last item in dropdown
+            e.preventDefault();
+            if (items.length > 0) {
+              items[items.length - 1].focus();
+            }
+          }
+        });
+      });
+
+      // Keyboard navigation within dropdown menus
+      document.querySelectorAll('.dropdown-menu a').forEach(link => {
+        link.addEventListener('keydown', function(e) {
+          const parent = this.closest('.has-dropdown');
+          if (!parent) return;
+
+          const toggle = parent.querySelector('.dropdown-toggle');
+          const items = getDropdownItems(toggle);
+          const currentIndex = items.indexOf(this);
+
+          if (e.key === 'Escape') {
+            // Close dropdown and return focus to toggle
+            e.preventDefault();
+            if (toggle) {
+              toggle.setAttribute('aria-expanded', 'false');
+              toggle.focus();
+            }
+          } else if (e.key === 'ArrowDown') {
+            // Navigate to next item (or first if at end)
+            e.preventDefault();
+            const nextIndex = (currentIndex + 1) % items.length;
+            items[nextIndex].focus();
+          } else if (e.key === 'ArrowUp') {
+            // Navigate to previous item (or last if at beginning)
+            e.preventDefault();
+            const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+            items[prevIndex].focus();
+          } else if (e.key === 'Home') {
+            // Jump to first item
+            e.preventDefault();
+            items[0].focus();
+          } else if (e.key === 'End') {
+            // Jump to last item
+            e.preventDefault();
+            items[items.length - 1].focus();
+          } else if (e.key === 'Tab') {
+            // Close dropdown when tabbing away
+            if (toggle) {
+              toggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.has-dropdown')) {
+          closeAllDropdowns();
+        }
+      });
+
+      // Close dropdowns on Escape key (global handler)
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeAllDropdowns();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
