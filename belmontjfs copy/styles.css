@@ -2863,7 +2863,7 @@ a:not(.usa-button):hover {
 .contact-card__text a {
   color: var(--county-blue);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   transition: color 0.2s ease;
 }
 
@@ -2874,7 +2874,7 @@ a:not(.usa-button):hover {
 
 .contact-card__text strong {
   color: var(--county-blue-dark);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 @media (max-width: 1024px) {
