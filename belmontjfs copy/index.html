@@ -24,7 +24,8 @@
 
   <!-- Facebook SDK -->
   <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="YOUR_NONCE"></script>
+  <!-- Note: Generate a unique nonce value server-side for Content Security Policy compliance -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
 
   <!-- Header -->
   <header class="site-header">
@@ -97,8 +98,8 @@
               The Crawford County Department of Job and Family Services provides assistance with public benefits, child support, child and adult protective services, foster care, adoption, and workforce development.
             </p>
             <div class="hero-actions">
-              <a class="usa-button usa-button--big" href="#apply">Apply for Benefits</a>
-              <a class="usa-button usa-button--outline usa-button--inverse usa-button--big" href="tel:419-562-0015">
+              <a class="usa-button usa-button--big" href="#apply" aria-label="Apply for Benefits">Apply for Benefits</a>
+              <a class="usa-button usa-button--outline usa-button--inverse usa-button--big" href="tel:419-562-0015" aria-label="Call 419-562-0015">
                 <i class="fas fa-phone" aria-hidden="true"></i>
                 Call (419) 562-0015
               </a>
@@ -181,9 +182,9 @@
       </div>
 
       <!-- Mobile Chat Bubble -->
-      <button class="chat-bubble-mobile" id="openChatButton" aria-label="Open chat">
+      <button class="chat-bubble-mobile" id="openChatButton" aria-label="Open chat - 1 unread message">
         <i class="fas fa-comments"></i>
-        <span class="chat-bubble-mobile__badge">1</span>
+        <span class="chat-bubble-mobile__badge" aria-hidden="true">1</span>
       </button>
     </section>
 
@@ -467,8 +468,8 @@
         <div class="support-grid">
           <!-- Medicaid Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/medicaid.jpg');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/medicaid.jpg');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">Medicaid</h3>
               <p class="support-card__description">
@@ -480,8 +481,8 @@
 
           <!-- Food & Cash Assistance Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/food-assistance.jpg');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/food-assistance.jpg');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">Food & Cash Assistance</h3>
               <p class="support-card__description">
@@ -493,8 +494,8 @@
 
           <!-- Child Care Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/child-care.jpg');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/child-care.jpg');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">Child Care</h3>
               <p class="support-card__description">
@@ -506,8 +507,8 @@
 
           <!-- Child Support Enforcement Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/child-support.png');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/child-support.png');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">Child Support Enforcement</h3>
               <p class="support-card__description">
@@ -519,8 +520,8 @@
 
           <!-- Child Protective Services Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/child-protective.png');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/child-protective.png');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">Child Protective Services</h3>
               <p class="support-card__description">
@@ -532,8 +533,8 @@
 
           <!-- Adoption & Foster Care Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/adoption.png');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/adoption.png');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">Adoption & Foster Care</h3>
               <p class="support-card__description">
@@ -545,8 +546,8 @@
 
           <!-- OhioMeansJobs Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/workforce.png');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/workforce.png');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">OhioMeansJobs</h3>
               <p class="support-card__description">
@@ -558,8 +559,8 @@
 
           <!-- Join Our Team Card -->
           <article class="support-card support-card--image">
-            <div class="support-card__bg-image" style="background-image: url('public/job.png');"></div>
-            <div class="support-card__overlay"></div>
+            <div class="support-card__bg-image" style="background-image: url('public/job.png');" role="presentation" aria-hidden="true"></div>
+            <div class="support-card__overlay" role="presentation" aria-hidden="true"></div>
             <div class="support-card__content">
               <h3 class="support-card__title">Join Our Team</h3>
               <p class="support-card__description">
@@ -573,10 +574,10 @@
     </section>
 
     <!-- Services Overview Callout -->
-    <section class="services-callout">
+    <section class="services-callout" aria-label="Our Mission">
       <div class="grid-container">
         <div class="services-callout__content">
-          <div class="services-callout__icon">
+          <div class="services-callout__icon" role="presentation" aria-hidden="true">
             <i class="fas fa-hands-helping" aria-hidden="true"></i>
           </div>
           <p class="services-callout__text">
@@ -595,50 +596,50 @@
             <h2 class="section-heading">Latest Updates</h2>
 
             <article class="news-article">
-              <div class="news-article__image">
+              <div class="news-article__image" role="presentation" aria-hidden="true">
                 <i class="fas fa-file-alt" aria-hidden="true"></i>
               </div>
               <div class="news-article__content">
                 <h4 class="news-article__title">
                   <a href="/news/group-home-supervisor-manager">Group Home Supervisor/Manager</a>
                 </h4>
-                <time class="news-article__date" datetime="2025-10-07">October 7, 2025</time>
+                <time class="news-article__date" datetime="2024-10-07">October 7, 2024</time>
               </div>
             </article>
 
             <article class="news-article">
-              <div class="news-article__image">
+              <div class="news-article__image" role="presentation" aria-hidden="true">
                 <i class="fas fa-file-alt" aria-hidden="true"></i>
               </div>
               <div class="news-article__content">
                 <h4 class="news-article__title">
                   <a href="/news/fiscal-account-clerk-2">Job Posting: Crawford County Department of Job and Family Services Fiscal – Account Clerk 2</a>
                 </h4>
-                <time class="news-article__date" datetime="2025-10-07">October 7, 2025</time>
+                <time class="news-article__date" datetime="2024-10-07">October 7, 2024</time>
               </div>
             </article>
 
             <article class="news-article">
-              <div class="news-article__image">
+              <div class="news-article__image" role="presentation" aria-hidden="true">
                 <i class="fas fa-file-alt" aria-hidden="true"></i>
               </div>
               <div class="news-article__content">
                 <h4 class="news-article__title">
                   <a href="/news/im-aide-public-assistance">Job Posting: Crawford County Department of Job and Family Services IM Aide – Public Assistance Division</a>
                 </h4>
-                <time class="news-article__date" datetime="2025-10-06">October 6, 2025</time>
+                <time class="news-article__date" datetime="2024-10-06">October 6, 2024</time>
               </div>
             </article>
 
             <article class="news-article">
-              <div class="news-article__image">
+              <div class="news-article__image" role="presentation" aria-hidden="true">
                 <i class="fas fa-file-alt" aria-hidden="true"></i>
               </div>
               <div class="news-article__content">
                 <h4 class="news-article__title">
                   <a href="/news/social-services-worker">Job Posting: Crawford County Department of Job and Family Services Social Services Worker 2/3</a>
                 </h4>
-                <time class="news-article__date" datetime="2025-09-30">September 30, 2025</time>
+                <time class="news-article__date" datetime="2024-09-30">September 30, 2024</time>
               </div>
             </article>
 
@@ -651,7 +652,7 @@
             <div class="contact-cards-grid">
               <!-- Director Card -->
               <div class="contact-card">
-                <div class="contact-card__icon">
+                <div class="contact-card__icon" role="presentation" aria-hidden="true">
                   <i class="fas fa-user-tie" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card__content">
@@ -664,7 +665,7 @@
 
               <!-- Hours Card -->
               <div class="contact-card">
-                <div class="contact-card__icon">
+                <div class="contact-card__icon" role="presentation" aria-hidden="true">
                   <i class="far fa-clock" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card__content">
@@ -677,7 +678,7 @@
 
               <!-- Address Card -->
               <div class="contact-card">
-                <div class="contact-card__icon">
+                <div class="contact-card__icon" role="presentation" aria-hidden="true">
                   <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card__content">
@@ -691,7 +692,7 @@
 
               <!-- Phone Card -->
               <div class="contact-card">
-                <div class="contact-card__icon">
+                <div class="contact-card__icon" role="presentation" aria-hidden="true">
                   <i class="fas fa-phone" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card__content">
@@ -704,7 +705,7 @@
 
               <!-- Email Card -->
               <div class="contact-card">
-                <div class="contact-card__icon">
+                <div class="contact-card__icon" role="presentation" aria-hidden="true">
                   <i class="fas fa-envelope" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card__content">
@@ -729,14 +730,14 @@
         <div class="site-footer__grid">
           <div class="site-footer__brand">
             <p>We provide Crawford County residents with supportive services for public assistance, child and adult protection, and workforce development.</p>
-            <div class="site-footer__social" aria-label="Follow Crawford County DJFS">
-              <a href="https://www.facebook.com/" class="site-footer__social-link" aria-label="Facebook">
+            <div class="site-footer__social" role="navigation" aria-label="Social media links">
+              <a href="https://www.facebook.com/" class="site-footer__social-link" aria-label="Follow us on Facebook">
                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
               </a>
-              <a href="https://www.linkedin.com/" class="site-footer__social-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/" class="site-footer__social-link" aria-label="Follow us on LinkedIn">
                 <i class="fab fa-linkedin-in" aria-hidden="true"></i>
               </a>
-              <a href="https://www.youtube.com/" class="site-footer__social-link" aria-label="YouTube">
+              <a href="https://www.youtube.com/" class="site-footer__social-link" aria-label="Follow us on YouTube">
                 <i class="fab fa-youtube" aria-hidden="true"></i>
               </a>
             </div>
